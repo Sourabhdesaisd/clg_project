@@ -1,0 +1,37 @@
+//
+// File created by:  irun
+// Do not modify this file
+//
+/home/vv2trainee8/Desktop/Sourabh/clg_prjct/inst_mem.v
+/home/vv2trainee8/Desktop/Sourabh/clg_prjct/pc_reg.v
+/home/vv2trainee8/Desktop/Sourabh/clg_prjct/if_stage_simple_btb.v
+/home/vv2trainee8/Desktop/Sourabh/clg_prjct/register_file.v
+/home/vv2trainee8/Desktop/Sourabh/clg_prjct/control_unit.v
+/home/vv2trainee8/Desktop/Sourabh/clg_prjct/top_decode.v
+/home/vv2trainee8/Desktop/Sourabh/clg_prjct/decode_unit.v
+/home/vv2trainee8/Desktop/Sourabh/clg_prjct/arithmetic_unit32.v
+/home/vv2trainee8/Desktop/Sourabh/clg_prjct/logical_unit32.v
+/home/vv2trainee8/Desktop/Sourabh/clg_prjct/shift_unit32.v
+/home/vv2trainee8/Desktop/Sourabh/clg_prjct/compare_unit32.v
+/home/vv2trainee8/Desktop/Sourabh/clg_prjct/branch_jump_unit.v
+/home/vv2trainee8/Desktop/Sourabh/clg_prjct/alu_top32.v
+/home/vv2trainee8/Desktop/Sourabh/clg_prjct/forwarding_unit.v
+/home/vv2trainee8/Desktop/Sourabh/clg_prjct/execute_stage.v
+/home/vv2trainee8/Desktop/Sourabh/clg_prjct/ex_mem_pipe.v
+/home/vv2trainee8/Desktop/Sourabh/clg_prjct/data_memory.v
+/home/vv2trainee8/Desktop/Sourabh/clg_prjct/load_datapath.v
+/home/vv2trainee8/Desktop/Sourabh/clg_prjct/store_datapath.v
+/home/vv2trainee8/Desktop/Sourabh/clg_prjct/data_mem_top.v
+/home/vv2trainee8/Desktop/Sourabh/clg_prjct/mem_stage.v
+/home/vv2trainee8/Desktop/Sourabh/clg_prjct/mem_wb_pipe.v
+/home/vv2trainee8/Desktop/Sourabh/clg_prjct/wb_stage.v
+/home/vv2trainee8/Desktop/Sourabh/clg_prjct/dynamic_branch_predictor.v
+/home/vv2trainee8/Desktop/Sourabh/clg_prjct/btb_file.v
+/home/vv2trainee8/Desktop/Sourabh/clg_prjct/btb_read.v
+/home/vv2trainee8/Desktop/Sourabh/clg_prjct/btb_write.v
+/home/vv2trainee8/Desktop/Sourabh/clg_prjct/btb.v
+/home/vv2trainee8/Desktop/Sourabh/clg_prjct/if_id_pipe.v
+/home/vv2trainee8/Desktop/Sourabh/clg_prjct/id_ex_pipe.v
+/home/vv2trainee8/Desktop/Sourabh/clg_prjct/hazard_unit.v
+/home/vv2trainee8/Desktop/Sourabh/clg_prjct/rv32i_core.v
+/home/vv2trainee8/Desktop/Sourabh/clg_prjct/main_tb.v
