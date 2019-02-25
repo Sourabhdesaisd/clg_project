@@ -7,8 +7,8 @@ input  [31:0] pc_id,
 input         predictedTaken_id,
 input  [2:0] func3,
 input  [4:0] rd,
-input  [4:0] rs1,
-input  [4:0] rs2,
+input  [4:0] rs1_addrs,
+input  [4:0] rs2_addrs,
 input  [31:0] imm_out,
 input  [31:0] rs1_data,
 input  [31:0] rs2_data,
@@ -26,8 +26,8 @@ output reg [31:0] pc_ex,
 output reg        predictedTaken_ex,
 output reg [2:0] func3_ex,
 output reg [4:0] rd_ex,
-output reg [4:0] rs1_ex,
-output reg [4:0] rs2_ex,
+output reg [4:0] rs1_addr_ex,
+output reg [4:0] rs2_addr_ex,
 output reg [31:0] imm_ex,
 output reg [31:0] rs1_data_ex,
 output reg [31:0] rs2_data_ex,
@@ -51,8 +51,8 @@ if (rst) begin
     predictedTaken_ex   <= 1'b0;
     func3_ex            <= 3'd0;
     rd_ex               <= 5'd0;
-    rs1_ex              <= 5'd0;
-    rs2_ex              <= 5'd0;
+    rs2_addr_ex              <= 5'd0;
+    rs2_addr_ex              <= 5'd0;
     imm_ex              <= 32'h0;
     rs1_data_ex         <= 32'h0;
     rs2_data_ex         <= 32'h0;
@@ -72,8 +72,8 @@ else if (flush) begin
     predictedTaken_ex   <= 1'b0;
     func3_ex            <= 3'd0;
     rd_ex               <= 5'd0;
-    rs1_ex              <= 5'd0;
-    rs2_ex              <= 5'd0;
+    rs2_addr_ex              <= 5'd0;
+    rs2_addr_ex              <= 5'd0;
     imm_ex              <= 32'h0;
     rs1_data_ex         <= 32'h0;
     rs2_data_ex         <= 32'h0;
@@ -93,8 +93,8 @@ else if (en) begin
     predictedTaken_ex   <= predictedTaken_id;
     func3_ex            <= func3;
     rd_ex               <= rd;
-    rs1_ex              <= rs1;
-    rs2_ex              <= rs2;
+    rs1_addr_ex              <= rs1_addrs;
+    rs2_addr_ex              <= rs2_addrs;
     imm_ex              <= imm_out;
     rs1_data_ex         <= rs1_data;
     rs2_data_ex         <= rs2_data;

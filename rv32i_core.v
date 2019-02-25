@@ -63,8 +63,8 @@ module rv32i_core (
 
     wire [2:0] func3_ex;
     wire [4:0] rd_ex;
-    wire [4:0] rs1_ex;
-    wire [4:0] rs2_ex;
+    wire [4:0] rs1_addr_ex;
+    wire [4:0] rs2_addr_ex;
     wire [31:0] imm_ex;
     wire [31:0] rs1_data_ex;
     wire [31:0] rs2_data_ex;
@@ -194,7 +194,7 @@ module rv32i_core (
     top_decode u_decode (
         .clk(clk),
         .instruction_in(instr_id),
-        .id_flush(hazard_id_ex_flush),
+       // .id_flush(hazard_id_ex_flush),
         .wb_wr_en(wb_write_en),
         .wb_wr_addr(wb_write_addr),
         .wb_wr_data(wb_write_data),
@@ -239,8 +239,8 @@ module rv32i_core (
         .predictedTaken_id(predictedTaken_id),
         .func3(instr_id[14:12]),
         .rd(instr_id[11:7]),
-        .rs1(instr_id[19:15]),
-        .rs2(instr_id[24:20]),
+        .rs1_addrs(instr_id[19:15]),
+        .rs2_addrs(instr_id[24:20]),
         .imm_out(imm_id),
         .rs1_data(rs1_data_id),
         .rs2_data(rs2_data_id),
@@ -258,8 +258,8 @@ module rv32i_core (
         .predictedTaken_ex(predictedTaken_ex),
         .func3_ex(func3_ex),
         .rd_ex(rd_ex),
-        .rs1_ex(rs1_ex),
-        .rs2_ex(rs2_ex),
+        .rs1_addr_ex(rs1_addr_ex),
+        .rs2_addr_ex(rs2_addr_ex),
         .imm_ex(imm_ex),
         .rs1_data_ex(rs1_data_ex),
         .rs2_data_ex(rs2_data_ex),
@@ -279,8 +279,8 @@ module rv32i_core (
     // 6) Forwarding unit
     // =====================================================
     forwarding_unit u_fwd (
-        .rs1_ex(rs1_ex),
-        .rs2_ex(rs2_ex),
+        .rs1_addr_ex(rs1_addr_ex),
+        .rs2_addr_ex(rs2_addr_ex),
         .exmem_regwrite(wb_reg_file_mem),
         .exmem_rd(rd_mem),
         .memwb_regwrite(wb_reg_file_wb),

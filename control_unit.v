@@ -120,7 +120,7 @@ module control_unit(
                 wb_reg_file = 1'b1; // WHAT: Write return address WHY: rd gets PC+4 HOW: Enable WB WHEN: JALR
             end
             7'b0110111: begin // LUI
-		ex_alu_src = 1'b0;	 mem_write = 1'b0; 	//mem_read = 1'b0;
+		ex_alu_src = 1'b1;	 mem_write = 1'b0; 	//mem_read = 1'b0;
         mem_load_type = 3'b010; 	mem_store_type = 2'b10;
        		  memtoreg = 1'b0;	 Branch_1 = 1'b0; 	jal = 1'b0;		 jalr = 1'b0; 		//	auipc = 1'b0; lui = 1'b0;
         
@@ -129,7 +129,7 @@ module control_unit(
                 alu_ctrl = 4'b1010; // WHAT: Select LUI operation WHY: Load upper immediate HOW: ALU control encoding WHEN: Execute
             end
             7'b0010111: begin // AUIPC
-		ex_alu_src = 1'b0; 	mem_write = 1'b0;	// mem_read = 1'b0;
+		ex_alu_src = 1'b1; 	mem_write = 1'b0;	 mem_read = 1'b0;
         mem_load_type = 3'b010; 	mem_store_type = 2'b10;
        		 memtoreg = 1'b0; 	Branch_1 = 1'b0; 		jal = 1'b0;		 jalr = 1'b0; 	//		auipc = 1'b0; lui = 1'b0;
                 
@@ -138,9 +138,9 @@ module control_unit(
             end
             default: begin 
 		// defaults
-        	ex_alu_src = 1'b0; mem_write = 1'b0; //mem_read = 1'b0;
+        	ex_alu_src = 1'b0; mem_write = 1'b0; mem_read = 1'b0;
             mem_load_type = 3'b010; mem_store_type = 2'b10;
-      		  wb_reg_file = 1'b0; memtoreg = 1'b0; Branch_1 = 1'b0; jal = 1'b0; jalr = 1'b0;// auipc = 1'b0; lui = 1'b0;
+      		  wb_reg_file = 1'b0; memtoreg = 1'b1; Branch_1 = 1'b0; jal = 1'b0; jalr = 1'b0;// auipc = 1'b0; lui = 1'b0;
       		  alu_ctrl = 4'b0000; // WHAT: Default ALU operation WHY: Safe no-op behavior HOW: Assign ADD WHEN: Invalid opcode
 
 		end

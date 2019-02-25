@@ -5,7 +5,7 @@ module top_decode (
 
     // Instruction fetch / ID inputs
     input  wire [31:0] instruction_in,
-    input  wire        id_flush,
+   // input  wire        id_flush,
 
     // Writeback port (from WB stage)
     input  wire        wb_wr_en,
@@ -53,7 +53,7 @@ module top_decode (
     // Decode unit
     decode_unit u_decode_unit (
         .instruction_in(instruction_in),
-        .id_flush(id_flush),
+       // .id_flush(id_flush),
      //   .opcode(instruction_in[6:0]),
       //  .func3(func3_w),
       //  .func7(func7_w),
@@ -67,7 +67,7 @@ module top_decode (
     control_unit u_ctrl (
         .opcode(instruction_in[6:0]),
 	.func3(instruction_in[14:12]), 
-	.func7(instruction_in[29]),
+	.func7(instruction_in[30]),
         .ex_alu_src(ex_alu_src_w), 
         .mem_write(mem_write_w), 
 //	.mem_read(mem_read_w),

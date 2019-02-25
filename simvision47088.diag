@@ -97,3 +97,7 @@ error minor reason {IFV failure}
 "namespace inscope ::Database {::database _postReload @public@12b}"
     ("after" script)
  
+*** Message Type: info ***
+When: Fri Feb 15 07:22:27 AM IST 2019
+SimVision Exit.
+ 

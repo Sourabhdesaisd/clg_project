@@ -14,7 +14,7 @@ module decode_unit (
 
 
    // Select either real instruction or zero when flushed
-    wire [31:0] instr = id_flush ? 32'h00000000 : instruction_in; // WHAT: Instruction select mux WHY: Flush converts instruction to NOP HOW: Ternary operator WHEN: Pipeline flush
+    wire [31:0] instr = instruction_in;//id_flush ? 32'h00000000 : instruction_in; // WHAT: Instruction select mux WHY: Flush converts instruction to NOP HOW: Ternary operator WHEN: Pipeline flush
 
    // Field extraction (combinational)
   //  assign opcode = instr[6:0];
